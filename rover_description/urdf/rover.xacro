@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<robot name="rover" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find rover_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find rover_description)/urdf/rover.trans" />
+<xacro:include filename="$(find rover_description)/urdf/rover.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-6.34662772009467e-18 -0.0006300564868981357 0.02143524040651141" rpy="0 0 0"/>
+    <mass value="2.8123334642397255"/>
+    <inertia ixx="0.003526" iyy="0.002174" izz="0.004278" ixy="-0.0" iyz="0.000127" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+</robot>
